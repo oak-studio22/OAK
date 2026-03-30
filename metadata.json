@@ -1,0 +1,5 @@
+{
+  "name": "Oak Studio",
+  "description": "Estúdio de design e criação digital premium.",
+  "requestFramePermissions": ["geolocation"]
+}

@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-red: #FF3B30;
+  --color-brand-yellow: #FFD60A;
+  --color-brand-orange: #FF9500;
+  --color-brand-black: #1C1C1E;
+  --color-brand-dark: #0A0A0A;
+  
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+  
+  h1, h2, h3 {
+    @apply font-display uppercase tracking-tight;
+  }
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-linear-to-r from-[#FF3B30] to-[#FF9500];
+}
+
+.glass {
+  @apply backdrop-blur-md bg-white/10 border border-white/20;
+}
+
+.btn-primary {
+  @apply bg-linear-to-r from-[#FF3B30] to-[#FF9500] text-white font-bold py-4 px-8 rounded-full shadow-[0_0_20px_rgba(255,59,48,0.4)] hover:shadow-[0_0_30px_rgba(255,59,48,0.6)] transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply border-2 border-white text-white font-bold py-4 px-8 rounded-full hover:bg-white hover:text-black transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2;
+}
